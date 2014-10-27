@@ -1,0 +1,357 @@
+.voteb
+{
+    color: #BDC3C7;
+    border: 2px solid #BDC3C7;
+    border-radius: 3px;
+    text-align: center;
+    height: 48px;
+    width: 40px;
+    background-color: #ffffff;
+    text-decoration: none;
+    padding-top: 5px;
+}
+.voteb:hover
+{
+    color: #2ECC71;
+    border: 2px solid #2ECC71;
+    text-decoration: none;
+
+}
+.voteb:active
+{
+    color: #ffffff;
+    border: 2px solid #26C281;
+    background-color: #26C281;
+    text-decoration: none;
+}
+
+.linkt
+{
+    text-decoration: none;
+    font-size: 20px;
+    color: rgba(4, 70, 86, 0.92);
+    font-weight: 700;
+}
+.linkt:hover
+{
+    color: #025E98;
+    text-decoration: none;
+    cursor: pointer;
+}
+#votec
+{
+    font-size: 12px;
+    font-weight: bold;
+}
+#linkbox
+{
+    padding-bottom: 15px;
+}
+#commetico
+{
+    vertical-align: middle;
+    color: #ccc;
+    font-size: 24px;
+}
+#submitli
+{
+    color: #ffffff;
+}
+#dropdown
+{
+    margin-top: 10px;
+}
+
+#submitb
+{
+    padding-bottom: 15px;
+}
+#title
+{
+    color: #6C7A89;
+    font-weight: 700;
+}
+#iconloading
+{
+    color: #26A65B;
+}
+.rsidebar
+{
+    top: 0px;
+    right: 0px;
+    bottom: 0px;
+    z-index: 1000;
+    box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.25);
+    border-left: 1px solid rgba(0, 0, 0, 0.1);
+    background-color: white;
+    transition: all 0s ease 0s, all 0.2s ease 0s;
+    padding-left: 0px;
+    padding-right: 0px;
+}
+
+@media only screen 
+and (min-width : 400px) {
+  .rsidebar
+  {
+      position: fixed;
+  }
+}
+
+#top
+{
+    padding-right: 20px;
+    padding-bottom: 20px;
+    padding-top: 25px;
+    padding-left: 30px;
+    height: 85px;
+    border-bottom: 1px solid #ccc;
+}
+#top-contain
+{
+   background: none repeat scroll 0% 0% #ECF0F1; 
+   
+}
+#bottom-contain
+{
+    padding-right: 20px;
+    padding-bottom: 20px;
+    padding-top: 20px;
+    padding-left: 30px;
+}
+#posted
+{
+    font-weight: 300;
+    color: #2B2B2B;
+    font-size: 12px;
+}
+.comments
+{
+    padding-left: 30px;
+    padding-top: 20px;
+    padding-right: 20px;
+}
+.commentarea
+{
+    resize: none;
+}
+.submitform
+{
+    margin-top: 60px;
+}
+
+
+.commentpic {
+    padding-right: 30px;
+}
+.navtitle {
+    color: #26A65B;
+    font-weight: 600;
+    font-size: 24px;
+}
+.navtitle:hover 
+{
+    color: #EEEEEE;
+}
+
+img:before
+{
+    content:" "; 
+    background:url('http://newton.physics.uiowa.edu/~sbaalrud/empty_profile.gif'); 
+    display: block; 
+    position:absolute;
+}
+
+.icon-bar {
+    background-color: #ffffff;
+}
+
+.navbar-toggle {
+    border: 1px solid #FFF;
+}
+
+#taglinetxt {
+    font-size: 16px;
+    font-weight: 300;
+}
+
+.nwcomment {
+    padding-top: 20px;
+}
+.tagline
+{
+    font-size : 14px;
+    color : #6C7A89;
+}
+.footer
+{
+    margin-bottom : 0px;
+    margin-top : 20px;
+    
+}
+
+
+
+.loading-bar
+{
+    -webkit-animation: shift-rightwards 1s ease-in-out infinite;
+    -moz-animation: shift-rightwards 1s ease-in-out infinite;
+    -ms-animation: shift-rightwards 1s ease-in-out infinite;
+    -o-animation: shift-rightwards 1s ease-in-out infinite;
+    animation: shift-rightwards 1s ease-in-out infinite;
+    -webkit-animation-delay: .4s;
+    -moz-animation-delay: .4s;
+    -o-animation-delay: .4s;
+    animation-delay: .4s;
+    
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    z-index: 2000;
+    background: #e74c3c;
+    -webkit-transform: translateX(100%);
+    -moz-transform: translateX(100%);
+    -o-transform: translateX(100%);
+    transform: translateX(100%);
+}
+
+@-webkit-keyframes shift-rightwards
+{
+    0%
+    {
+        -webkit-transform:translateX(-100%);
+        -moz-transform:translateX(-100%);
+        -o-transform:translateX(-100%);
+        transform:translateX(-100%);
+    }
+
+    40%
+    {
+        -webkit-transform:translateX(0%);
+        -moz-transform:translateX(0%);
+        -o-transform:translateX(0%);
+        transform:translateX(0%);
+    }
+
+    60%
+    {
+        -webkit-transform:translateX(0%);
+        -moz-transform:translateX(0%);
+        -o-transform:translateX(0%);
+        transform:translateX(0%);
+    }
+
+    100%
+    {
+        -webkit-transform:translateX(100%);
+        -moz-transform:translateX(100%);
+        -o-transform:translateX(100%);
+        transform:translateX(100%);
+    }
+
+}
+@-moz-keyframes shift-rightwards
+{
+    0%
+    {
+        -webkit-transform:translateX(-100%);
+        -moz-transform:translateX(-100%);
+        -o-transform:translateX(-100%);
+        transform:translateX(-100%);
+    }
+
+    40%
+    {
+        -webkit-transform:translateX(0%);
+        -moz-transform:translateX(0%);
+        -o-transform:translateX(0%);
+        transform:translateX(0%);
+    }
+
+    60%
+    {
+        -webkit-transform:translateX(0%);
+        -moz-transform:translateX(0%);
+        -o-transform:translateX(0%);
+        transform:translateX(0%);
+    }
+
+    100%
+    {
+        -webkit-transform:translateX(100%);
+        -moz-transform:translateX(100%);
+        -o-transform:translateX(100%);
+        transform:translateX(100%);
+    }
+
+}
+@-o-keyframes shift-rightwards
+{
+    0%
+    {
+        -webkit-transform:translateX(-100%);
+        -moz-transform:translateX(-100%);
+        -o-transform:translateX(-100%);
+        transform:translateX(-100%);
+    }
+
+    40%
+    {
+        -webkit-transform:translateX(0%);
+        -moz-transform:translateX(0%);
+        -o-transform:translateX(0%);
+        transform:translateX(0%);
+    }
+
+    60%
+    {
+        -webkit-transform:translateX(0%);
+        -moz-transform:translateX(0%);
+        -o-transform:translateX(0%);
+        transform:translateX(0%);
+    }
+
+    100%
+    {
+        -webkit-transform:translateX(100%);
+        -moz-transform:translateX(100%);
+        -o-transform:translateX(100%);
+        transform:translateX(100%);
+    }
+
+}
+@keyframes shift-rightwards
+{
+    0%
+    {
+        -webkit-transform:translateX(-100%);
+        -moz-transform:translateX(-100%);
+        -o-transform:translateX(-100%);
+        transform:translateX(-100%);
+    }
+
+    40%
+    {
+        -webkit-transform:translateX(0%);
+        -moz-transform:translateX(0%);
+        -o-transform:translateX(0%);
+        transform:translateX(0%);
+    }
+
+    60%
+    {
+        -webkit-transform:translateX(0%);
+        -moz-transform:translateX(0%);
+        -o-transform:translateX(0%);
+        transform:translateX(0%);
+    }
+
+    100%
+    {
+        -webkit-transform:translateX(100%);
+        -moz-transform:translateX(100%);
+        -o-transform:translateX(100%);
+        transform:translateX(100%);
+    }
+}
