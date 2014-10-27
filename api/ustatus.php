@@ -1,4 +1,6 @@
 <?php
+//checks user staus, logged in user or not and generates user information accodringly
+
 session_start();
 require_once('twa.php');
 require_once('config.php');
