@@ -1,4 +1,4 @@
-Heading
+Helius - A HackerNews Clone
 =======
 ![enter image description here](https://lh5.googleusercontent.com/-d7_mhr-F9k4/VE5vTuGmeFI/AAAAAAAAIXg/xPBheWCTvi8/w910-h460/Screenshot+from+2014-10-27+21:42:29.png)
 Introduction
