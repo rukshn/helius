@@ -36,7 +36,7 @@ Before you finish reading
 
  1. It was a weekend project so the coding was in a rush and it might not follow your best practices in coding.
  2. The documentation might be little.
- 3. There is lot of room for improvement, please improve on this, correct errors.
+ 3. There is lot of room for improvement, please improve on this, fork it, correct errors.
  4. If you hate PHP don't blame me, it may not be perfect but it works.
 
 Dependencies 
