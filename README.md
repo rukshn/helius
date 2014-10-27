@@ -46,4 +46,5 @@ Dependencies
  - Twitter Bootstrap
  - Handlebars JS
  - Ember JS
+ - Moment JS
  
