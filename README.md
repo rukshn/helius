@@ -20,6 +20,7 @@ How to use
 Here is a brief introduction to the directories in the repository.
 
 **API :** Contains all the files that handle the backend functions.
+
 **Assets:** Contains the CSS and image files.
 
 **After installation,** 
