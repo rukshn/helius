@@ -1,6 +1,9 @@
 Helius - A HackerNews Clone
 =======
 ![enter image description here](https://lh5.googleusercontent.com/-d7_mhr-F9k4/VE5vTuGmeFI/AAAAAAAAIXg/xPBheWCTvi8/w910-h460/Screenshot+from+2014-10-27+21:42:29.png)
+
+If you are interested in becoming a contributer let me know
+
 Introduction
 ------------
 A simple HackerNews clone written using PHP, and EmberJS. It requires users signing in using a Twitter account. Inspired by Product Hunt and HackerNews and all the HackerNews clones focusing on different sub categories (HackerNews for Bitcoin etc)
@@ -37,7 +40,8 @@ Before you finish reading
  1. It was a weekend project so the coding was in a rush and it might not follow your best practices in coding.
  2. The documentation might be little.
  3. There is lot of room for improvement, please improve on this, fork it, correct errors.
- 4. If you hate PHP don't blame me, it may not be perfect but it works.
+ 4. If you like contribute to the project. 
+ 5. If you hate PHP don't blame me, it may not be perfect but it works.
 
 Dependencies 
 -------
