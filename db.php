@@ -18,7 +18,7 @@ mysql_query("CREATE TABLE `users` (
   `twitter_token` text NOT NULL,
   `twitter_secret` text NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM AUTO_INCREMENT=9 DEFAULT CHARSET=latin1")
+)")
  or die(mysql_error());  
 
 //Create post table
@@ -31,7 +31,7 @@ mysql_query("CREATE TABLE `posts` (
   `user` varchar(30) NOT NULL,
   `post_time` varchar(30) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM AUTO_INCREMENT=27 DEFAULT CHARSET=latin1") or die (mysql_error());
+)") or die (mysql_error());
 
 //create vote table
 
@@ -41,7 +41,7 @@ mysql_query("CREATE TABLE `votes` (
   `user_id` varchar(30) NOT NULL,
   `op_id` varchar(30) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM AUTO_INCREMENT=67 DEFAULT CHARSET=latin1")
+)")
 or die(mysql_error());
 
 //create comment table
@@ -54,6 +54,6 @@ mysql_query("CREATE TABLE `comments` (
   `commentid` varchar(20) NOT NULL,
   `ctime` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM AUTO_INCREMENT=4 DEFAULT CHARSET=latin1") or die(mysql_error());
+)") or die(mysql_error());
 
 ?>
