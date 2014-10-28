@@ -30,7 +30,7 @@ if($_SESSION['user_status'] !== true)
         $query->execute();
         $rows = $query->fetchAll(PDO::FETCH_ASSOC);
         
-        if($rows==true)
+        if($rows)
         {
             $token = $rows[0]['twitter_token'];
             $secret = $rows[0]['twitter_secret'];
