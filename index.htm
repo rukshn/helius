@@ -4,10 +4,17 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Helius</title>
+    
+    <meta property="og:title" content="Picnicy" />
+    <meta property="og:type" content="Website" />
+    <meta property="og:url" content="http://picnicy.com" />
+    <meta property="og:image" content="https://pbs.twimg.com/profile_images/1551121325/hnshanghai.png" />
+    <meta property="og:description" content="Forum sharing Sri Lankan tech and news" /> 
+
+    <title>Picnicy</title>
 
     <!-- Bootstrap -->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/assets/bootstrap.min.css">
     <link href='https://fonts.googleapis.com/css?family=Lato:400,300,700' rel='stylesheet' type='text/css'>
     <link rel="stylesheet" href="https://code.ionicframework.com/ionicons/1.5.2/css/ionicons.min.css" type="text/css">
     <link rel="stylesheet" href="/assets/main.css" type="text/css">
@@ -29,7 +36,7 @@
     }(document, 'script', 'facebook-jssdk'));</script>
 
   <script type="text/x-handlebars" data-template-name="index">
-         <nav class="navbar navbar-static-top cnav" role="navigation">
+         <nav class="navbar navbar-inverse navbar-static-top cnav" role="navigation">
           <div class="col-lg-8 col-lg-offset-2">
             <div class="navbar-header">
               <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
@@ -38,27 +45,27 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
               </button>
-              <a class="navbar-brand navtitle" href="#">Picnicy</a>
+              {{#link-to 'index' class="navbar-brand navtitle"}}Picnicy{{/link-to}}
             </div>
               <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
               <ul class="nav navbar-nav navbar-left">
-                  <li><a class="bubble">Sri Lankan techno page</a>
+                  <li><a class="bubble">A Sri Lankan techno page - Beta</a>
               </ul>
                 <ul class="nav navbar-nav navbar-right">
-                <li>{{#link-to 'about'}}About{{/link-to}}</li>
                     {{#if ustat.user_status}}
                     <li><a {{action 'toggleSubmit'}} href="#"><span id="submitli" class="glyphicon glyphicon-plus"></span> Submit</a></li>
                     <li><div id="dropdown" class="dropdown"><a id="dropdownMenu" data-toggle="dropdown"><img height="30" width="30" class="img-circle img-responsive usrpic" {{bind-attr src = ustat.propic}} ></a>
                         <ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu1">
                         <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Profile</a></li>
-                        <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Log out</a></li>
+                        <li role="presentation"><a role="menuitem" tabindex="-1" href="/api/logout.php">Log out</a></li>
                         </ul>
                         
                         </div></li>
 
                     {{else}}
-                    <li>{{#link-to 'login'}}Login{{/link-to}}</li>
+                    <li>{{#link-to 'login'}}Submit{{/link-to}}</li>
                     {{/if}}
+                    <li>{{#link-to 'about'}}About{{/link-to}}</li>
                 </ul>
               </div>
           </div>
@@ -66,10 +73,12 @@
       <div class="container">
        {{#unless ustat.user_status}}
       <div class="col-md-8 col-md-offset-2 well well-lg">
-      Get best stories dilivered to your inbox everyday!!
-      <a href="http://eepurl.com/57ZwD" class="btn btn-info">Subsribe</a>
+      Join the newsletter to get updates. Don't worry no spam here :)  
+      <a href="http://eepurl.com/57ZwD" class="btn btn-info">Subscribe</a>
+      <a href="http://twitter.com/picnicyco" class="btn btn-info">@picnicyco</a>
       </div>
       {{/unless}}
+    
           <div class="row">
             {{outlet}}
               {{#if showSubmit}}
@@ -82,7 +91,7 @@
                 <div {{bind-attr class=":col-md-8 :col-md-offset-2"}}>
             {{/if}}
             {{#each item in uposts itemController="book"}}
-
+      
                     <div id="linkbox" class="media">
                         {{#if item.isVoted}}
                             <a {{bind-attr linkid = item.datalink}} class="pull-left voteb" href="#" {{action 'voteup' item.datalink}}>
@@ -116,8 +125,8 @@
     <nav class="navbar navbar-default navbar-static footer" role="navigation">
       <div class="container">
       <ul class="nav navbar-nav navbar-right">
-      <li><a href="https://www.facebook.com/picnicy">FB @picnicy</a></li>
-      <li><a href="https://twitter.com/HiColombo">@HiColombo</a></li>
+      <li><a><div class="fb-like" data-href="https://facebook.com/picnicy" data-layout="button_count" data-action="like" data-show-faces="true" data-share="false"></div></a></li>
+      <li><a href="https://twitter.com/picnicyco">@picnicyco</a></li>
       <li><a href="http://eepurl.com/57ZwD">Newsletter</a></li>
       <li><a href="#">Bugs and contact</a></li>
       <li><a href="#">♥ Sri Lanka</a></li>
@@ -157,18 +166,21 @@
                  <img {{bind-attr src = uposts.upropic}} class="img-circle" height="40" width="40">
                      <span id="posted">Posted by {{uposts.user}} {{format-date uposts.post_date}}</span>
                      <div class="social-buttons pull-right">
-                      <a href="#" class="btn btn-default btn-xs">Back</a>
-                      <a href="#" {{action 'fbshare' uposts.datalink}} class="btn btn-primary btn-xs fbshare">Facebook</a>
-                      <a href="#" {{action 'twshare' uposts.datalink}} class="btn btn-info btn-xs">Twitter</a>
+                      {{#link-to 'index' class="btn btn-default btn-xs"}}<span class="ion-arrow-left-b"></span>Back{{/link-to}}
+                      <a href="#" {{action 'fbshare' uposts.datalink}} class="btn btn-primary btn-xs fbshare"><span class="ion-social-facebook"></span>Facebook</a>
+                      <a href="#" {{action 'twshare' uposts.datalink}} class="btn btn-info btn-xs"><span class="ion-social-twitter"></span>Twitter</a>
                      </div>
                  </div>
                 <div id="bottom-contain">
                 {{#if voop}}
                 <div class="alert alert-warning alert-dismissible" role="alert">
                   <button type="button" class="close" data-dismiss="alert"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
-                  <strong>Warning!</strong> You can't vote on your own posts
+                  <strong>Oh Snap</strong> You can't vote on your own posts
                 </div>
-                {{/if}}    
+                {{/if}} 
+                {{#if islg}}
+                <div class="alert alert-info" role="alert"><strong><a href="/api/login.php" class="alert-link">Login</a></strong> With your Twitter account for vote on stories</div>
+                {{/if}}
                     <div id="linkbox" class="media">
                         {{#if uposts.isVoted}}
                             <a {{bind-attr linkid = uposts.datalink}} class="pull-left voteb" href="#" {{action 'voteup' uposts.datalink}}>
@@ -182,16 +194,16 @@
                                 </a>  
                          {{/if}}
                          <div id="linkbody" class="media-body col-md-offset-1">
-                              <h4 class="media-heading">{{#link-to href=uposts.post_url class="linkt"}}{{uposts.title}}{{/link-to}}
-                                <p id="taglinetxt">{{uposts.tagline}}</p>
-                             <a href="#" {{action 'report' uposts.datalink}}><span class="ion-ios7-flag pull-right" id="commetico"></span></a>
-                             </h4>     
+                              <h4 class="media-heading"><a {{bind-attr href = uposts.post_url}} target="_blank" class="linkt">{{uposts.title}}</a> <small>{{format-url uposts.post_url}}</small></h4>
+                              <p id="taglinetxt">{{uposts.tagline}}</p>
+                              <a href="#" {{action 'report' uposts.datalink}}><span class="ion-ios7-flag pull-right" id="commetico"></span></a>
+                             
                         </div>
                       </div>
                 </div>
              </div>
-             <div class="col-md-11 comments">
              {{#each item in comment}}
+             <div id="bottom-contain">
                 <div class="media commentbox">
                   <a class="pull-left" href="#">
                     <img class="media-object img-circle" {{bind-attr src = item.propic}} alt="...">
@@ -201,37 +213,35 @@
                     {{item.comment}}
                   </div>
                 </div>
+                </div>
             {{/each}}
-            </div>
-            <div class="col-md-11 nwcomment">
+            
                 {{#if ustat.user_status}}
-                 
+                <div id="bottom-contain">
                  <form class="form"  {{action 'submit' uposts.datalink on='submit'}} role="form">
                      <div class="form-group">
                          {{textarea value=ncomment class="form-control commentarea" rows="3" required="true"}}
                      </div>
-                    <button type="submit" class="btn btn-success">Comment</button>
+                    <button type="submit" class="btn btn-success"><span class="ion-ios7-compose"></span>Comment</button>
                  </form>
-                 
+                 </div>
+                 {{else}}
+                  <div class="alert alert-info" role="alert"><strong><a href="/api/login.php" class="alert-link">Login</a></strong> With you Twitter account to comment on posts</div>
                  {{/if}}
-             </div>
         </div>
       </script>
       
       <script type="text/x-handlebars" id="post/loading" data-template-name="index/loading">
-            <div class="col-md-6 sidebarr pull-right rsidebar">
-             <div id="top">
-                <h4 id="title" class="pull-left"><span id="iconloading" class="ion-refreshing"></span>
-                Loading. Chillax.
-                </h4>
-            </div>
-          </div>
+            <div class="loading-bar"></div>
         </script>
-          <script type="text/x-handlebars" id="p/loading" data-template-name="loading">
+        
+      <script type="text/x-handlebars" id="p/loading" data-template-name="loading">
+            <div class="loading-bar"></div>
             <div class="col-md-8 col-md-offset-2">
-                <h4 id="title" class="pull-left"><span id="iconloading" class="ion-refreshing"></span>
+                <h3 id="title" class="pull-left">
+                <img src="/assets/fire.png">
                 Loading. Chillax.
-                </h4>
+                </h3>
             </div>
         </script>
         
@@ -248,7 +258,7 @@
             </ul>
             <div>
             <a href="/api/login.php" class="btn btn-info"><span class="ion-social-twitter"></span>Login With Your Twitter</a>
-            <a href="#" class="btn btn-default">Back</a>
+            {{#link-to 'index' class="btn btn-default"}}Back{{/link-to}}
             </div>
         </div>
         </div>
@@ -262,14 +272,18 @@
             <ul>
             <li>This is freshly made and it's highly unstable and buggy</li>
             <li>If you find any bug let me know first</li>
-            <li>Subscribe for the newsletter<li>
+            <li>Subscribe for the newsletter</li>
             <li>Send suggestions</li>
             <li>Thigs may change rapidly as time goes by</li>
             <li>I might post the code on Github although it's a mess ATM</li>
             </ul>
+            <h3>How to submit stories?</h3>
+            <p>You can submit any good tech stories, products and events from Sri Lanka or anywhere in the world that will be important for Sri Lankans</p>
+            <p>Before you submit a story you will have to sign up using your Twitter account</p>
+            <P>Follow on Twitter <a href="http://twitter.com/picnicyco">@Picnicyco</a>, on Facebook <a href="http://facebook.com/picnicy">Picnicy</a></p>
             <div>
             <a href="/api/login.php" class="btn btn-info"><span class="ion-social-twitter"></span>Login With Your Twitter</a>
-            <a href="#" class="btn btn-default">Back</a>
+            {{#link-to 'index' class="btn btn-default"}}Back{{/link-to}}
             </div>
         </div>
         </div>
