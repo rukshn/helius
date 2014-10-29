@@ -88,7 +88,7 @@ App.BookController = Ember.ObjectController.extend({
 
 App.PostController = Ember.ObjectController.extend({
   voop : false,
-  
+  islg : false,
     actions: {
         voteup: function(e) { //vote up fucntion
         this.set('uposts.isVoted', false);
@@ -98,6 +98,10 @@ App.PostController = Ember.ObjectController.extend({
           if(data == "X")
           {
             self.set('voop' , true);
+          }
+          else if(dara == "L")
+          {
+            self.set('islg', true);
           }
           else
           {
@@ -115,6 +119,10 @@ App.PostController = Ember.ObjectController.extend({
           if(data == "X")
           {
             self.set('voop' , true);
+          }
+          else if(data == "L")
+          {
+            self.set('islg', true);
           }
           else
           {
