@@ -228,4 +228,34 @@ $("img").error(function () {
   $(this).unbind("error").attr("src", "http://www.piraten-oberpfalz.de/files/2009/08/orange-twitter-egg.jpg");
 });
 
+//The hashbang for better Goolge crawling
+
+Ember.Location.registerImplementation('hashbang', Ember.HashLocation.extend({
+  getURL: function () {
+    return Ember.get(this, 'location').hash.substr(2);
+  },
+
+  setURL: function (path) {
+    Ember.get(this, 'location').hash = '!' + path;
+    Ember.set(this, 'lastSetURL', '!' + path);
+  },
+
+  onUpdateURL: function (callback) {
+    var self = this;
+    var guid = Ember.guidFor(this);
+
+    Ember.$(window).bind('hashchange.ember-location-' + guid, function () {
+      Ember.run(function() {
+        var path = location.hash.substr(2);
+        if (Ember.get(self, 'lastSetURL') === path) { return; }
+        Ember.set(self, 'lastSetURL', null);
+        callback(path);
+      });
+    });
+  },
+
+  formatURL: function (url) {
+    return '#!' + url;
+  }
+}));
 
