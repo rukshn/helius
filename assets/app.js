@@ -10,9 +10,10 @@ this.resource('index', {path : '/'} , function() {
 });
 });
 
-//Location API
+//Location API, keep auto for browser history API and none for # URL, hashbang for #! URLs to bettter SEO 
 App.Router.reopen({
-  location: 'auto'
+//   location: 'auto'
+     location : 'hashbang'
 });
 
 //Controllers
